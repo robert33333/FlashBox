@@ -6,8 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class FragmentFriends extends Fragment {
 
@@ -18,9 +19,19 @@ public class FragmentFriends extends Fragment {
 
         ListView listView = view.findViewById(R.id.listViewFriends);
 
-        String [] friends = {"unu","doi","trei"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,friends);
-        listView.setAdapter(adapter);
+        //String [] friends = {"unu","doi","trei"};
+        //ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,friends);
+
+        ArrayList<FriendRow> friendRows = new ArrayList<>();
+        friendRows.add(new FriendRow("unu"));
+        friendRows.add(new FriendRow("doi"));
+        friendRows.add(new FriendRow("trei"));
+
+        FriendAdapter friendAdapter = new FriendAdapter(getActivity().getApplicationContext(), friendRows);
+        listView.setAdapter(friendAdapter);
+
+        friendAdapter.add(new FriendRow("patru"));
+        friendAdapter.add(new FriendRow("cinci"));
 
         return view;
     }
