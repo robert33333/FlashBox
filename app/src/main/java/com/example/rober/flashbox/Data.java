@@ -1,5 +1,5 @@
 package com.example.rober.flashbox;
 
-public class Data {
+class Data {
     static String userID;
 }

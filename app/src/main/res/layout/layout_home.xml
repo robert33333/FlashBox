@@ -35,7 +35,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="username"
+        android:text="@string/username"
         app:layout_constraintBottom_toTopOf="@+id/divider1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/userlabel"
@@ -49,7 +49,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="My Series"
+        android:text="@string/my_series"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userlabel"
         tools:textSize="@android:dimen/app_icon_size"
@@ -60,11 +60,4 @@
         style="@style/bara"
         app:layout_constraintTop_toBottomOf="@+id/series" />
 
-    <View
-        android:id="@+id/divider6"
-        android:layout_width="1dp"
-        android:layout_height="495dp"
-        android:background="?android:attr/listDivider"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="8dp" />
 </android.support.constraint.ConstraintLayout>

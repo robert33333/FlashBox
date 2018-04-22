@@ -9,12 +9,9 @@ import android.view.ViewGroup;
 
 public class FragmentHome extends Fragment {
 
-    View myView;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.layout_home, container, false);
-        return myView;
+        return inflater.inflate(R.layout.layout_home, container, false);
     }
 }

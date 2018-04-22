@@ -18,5 +18,19 @@
     <string name="profile_email">Email</string>
     <string name="profile_joined_on">Joined on</string>
 
+    <string name="friends_add_friend_button">+ ADD FRIEND</string>
+    <string name="friends_my_friends">My friends</string>
+
     <string name="user">User</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="logo">logo</string>
+    <string name="username">username</string>
+    <string name="my_series">My series</string>
+    <string name="friends">friends</string>
+    <string name="settings">settings</string>
+    <string name="nume_utilizator">Nume utilizator</string>
+    <string name="email_utilizator">Email utilizator</string>
+    <string name="data_inscriere">Data inscriere</string>
+
 </resources>

@@ -17,7 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profile"
+        android:contentDescription="@string/logo" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -76,7 +77,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="80dp"
-        android:text="nume_utilizator"
+        android:text="@string/nume_utilizator"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/profile_username"
@@ -90,7 +91,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:text="email_utilizator"
+        android:text="@string/email_utilizator"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/profile_email"
@@ -103,7 +104,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:text="data_inscriere"
+        android:text="@string/data_inscriere"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/profile_joined_on"
