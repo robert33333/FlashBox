@@ -108,9 +108,14 @@ public class MainActivity extends AppCompatActivity
                         .commit();
                 break;
             case R.id.nav_friends:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.content_frame,new FragmentFriends())
-                        .commit();
+                try {
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.content_frame, new FragmentFriends())
+                            .commit();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.nav_profile:
                 fragmentManager.beginTransaction()

@@ -98,7 +98,6 @@
         app:layout_constraintTop_toBottomOf="@+id/user_name" />
 
     <TextView
-        android:id="@+id/user_join_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
