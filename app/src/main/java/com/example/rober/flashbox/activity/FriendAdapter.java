@@ -1,4 +1,4 @@
-package com.example.rober.flashbox;
+package com.example.rober.flashbox.activity;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.rober.flashbox.R;
 
 import java.util.ArrayList;
 

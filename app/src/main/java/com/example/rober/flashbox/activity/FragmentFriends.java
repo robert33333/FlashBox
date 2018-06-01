@@ -1,4 +1,4 @@
-package com.example.rober.flashbox;
+package com.example.rober.flashbox.activity;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.example.rober.flashbox.R;
 
 import java.util.ArrayList;
 

@@ -14,6 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.rober.flashbox.activity.FragmentFriends;
+import com.example.rober.flashbox.activity.FragmentHome;
+import com.example.rober.flashbox.activity.FragmentProfile;
+import com.example.rober.flashbox.activity.FragmentSettings;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -45,12 +50,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //verificare login
-        SharedPreferences myPrefs = this.getSharedPreferences("myPrefs", 0);
-        Data.userID = myPrefs.getString("userID",null);
-        if (Data.userID == null) {
-            Intent intent = new Intent(this,LoginActivity.class);
-            startActivity(intent);
-        }
 
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()

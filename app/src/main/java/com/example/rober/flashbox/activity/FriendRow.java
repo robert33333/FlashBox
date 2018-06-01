@@ -1,4 +1,4 @@
-package com.example.rober.flashbox;
+package com.example.rober.flashbox.activity;
 
 class FriendRow {
     final String username;
