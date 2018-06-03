@@ -54,8 +54,8 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintLeft_toLeftOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="@+id/poza_serial"
+        app:layout_constraintTop_toBottomOf="@+id/poza_serial"
         android:layout_marginStart="8dp" />
 
     <EditText
@@ -67,12 +67,12 @@
         android:layout_marginTop="22dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintLeft_toLeftOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="@+id/poza_serial"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
         android:layout_marginStart="8dp" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/poza_serial"
         android:layout_width="152dp"
         android:layout_height="150dp"
         android:layout_marginLeft="8dp"
@@ -96,8 +96,8 @@
         android:text="@string/login_button"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@+id/imageView"
-        app:layout_constraintRight_toRightOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="@+id/poza_serial"
+        app:layout_constraintRight_toRightOf="@+id/poza_serial"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <TextView
@@ -111,8 +111,8 @@
         android:text="@string/login_create_account"
         android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/imageView"
-        app:layout_constraintRight_toRightOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="@+id/poza_serial"
+        app:layout_constraintRight_toRightOf="@+id/poza_serial"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <android.support.constraint.Guideline

@@ -4,12 +4,18 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class DataBase {
     public static ObjectOutputStream oos;
     public static ObjectInputStream ois;
     public static Socket socket;
     public static DateUtilizator utilizatorCurent;
+    public static ArrayList<String> listaSeriale;
+    public static Serial serialCurent;
+    public static boolean isChecked = false;
+    public static ArrayList<EpisodFavorit> episoadeFavorite;
+    public static boolean inMain = false;
 
     public static void initialize() {
         try {
@@ -17,6 +23,17 @@ public class DataBase {
             ois = new ObjectInputStream(socket.getInputStream());
             oos = new ObjectOutputStream(socket.getOutputStream());
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void getEpisoadeFavorite() {
+                try {
+                    oos.writeObject(new Comanda("get Episoade favorite",utilizatorCurent.getIdUtilizator()));
+                    episoadeFavorite = (ArrayList<EpisodFavorit>) ois.readObject();
+                } catch (IOException e) {
+                    e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
