@@ -1,6 +1,7 @@
 package com.example.rober.flashbox;
 
 import android.annotation.SuppressLint;
+import android.app.FragmentManager;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.provider.ContactsContract;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
+import com.example.rober.flashbox.activity.FragmentHome;
 import com.example.rober.flashbox.date.Comanda;
 import com.example.rober.flashbox.date.DataBase;
 import com.example.rober.flashbox.date.Episod;
@@ -116,7 +118,7 @@ public class SerialActivity extends AppCompatActivity {
                         LinearLayout listaEpisoade = (LinearLayout) findViewById(R.id.lista_episoade);
                         if(((LinearLayout) listaEpisoade).getChildCount() > 0)
                             ((LinearLayout) listaEpisoade).removeAllViews();
-                        final Sezon sezonCurent = DataBase.serialCurent.getListaSezoane().get(Integer.parseInt(tv.getText().toString().trim())-1);
+                            final Sezon sezonCurent = DataBase.serialCurent.getListaSezoane().get(Integer.parseInt(tv.getText().toString().trim())-1);
                         for(final Episod episod: sezonCurent.getListaEpisoade()) {
                             final TextView tv2 = new TextView(getApplicationContext());
                             tv2.setText(episod.getNumar()+" ");
@@ -190,7 +192,7 @@ public class SerialActivity extends AppCompatActivity {
                                             }
 
                                             else {
-                                                idEpisod = -1;
+                                                idEpisod = episodCurent.getId()+500;
                                                 DataBase.isChecked = false;
                                                 imageButton.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),android.R.drawable.btn_star_big_off));
                                             }
@@ -232,7 +234,6 @@ public class SerialActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
         super.onBackPressed();
     }
 }

@@ -12,7 +12,7 @@ public class EpisodFavorit implements Serializable {
 
     public EpisodFavorit() {}
 
-    public EpisodFavorit(int idEpisod, int idUtilizator) {
+    public EpisodFavorit(int idUtilizator, int idEpisod) {
         this.idEpisod = idEpisod;
         this.idUtilizator = idUtilizator;
     }

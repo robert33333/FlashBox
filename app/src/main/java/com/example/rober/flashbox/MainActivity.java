@@ -17,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +26,13 @@ import com.example.rober.flashbox.activity.FragmentFriends;
 import com.example.rober.flashbox.activity.FragmentHome;
 import com.example.rober.flashbox.activity.FragmentProfile;
 import com.example.rober.flashbox.activity.FragmentSettings;
+import com.example.rober.flashbox.date.Comanda;
 import com.example.rober.flashbox.date.DataBase;
+import com.example.rober.flashbox.date.EpisodFavorit;
+
+import java.io.IOException;
+
+import static com.example.rober.flashbox.date.DataBase.oos;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,6 +41,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataBase.inMain=true;
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -149,6 +157,16 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onStart() {
+        DataBase.inMain = true;
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame,new FragmentHome())
+                .commit();
+        super.onStart();
     }
 
 }

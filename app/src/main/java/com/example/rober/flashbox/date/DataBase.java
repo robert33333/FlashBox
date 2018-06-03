@@ -1,10 +1,15 @@
 package com.example.rober.flashbox.date;
 
+import android.provider.ContactsContract;
+import android.util.Log;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
+
+import static android.support.constraint.Constraints.TAG;
 
 public class DataBase {
     public static ObjectOutputStream oos;
@@ -28,13 +33,15 @@ public class DataBase {
     }
 
     public static void getEpisoadeFavorite() {
+                episoadeFavorite = null;
                 try {
                     oos.writeObject(new Comanda("get Episoade favorite",utilizatorCurent.getIdUtilizator()));
                     episoadeFavorite = (ArrayList<EpisodFavorit>) ois.readObject();
                 } catch (IOException e) {
+                            e.printStackTrace();
+                } catch (ClassNotFoundException e) {
                     e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+                }
     }
+
 }

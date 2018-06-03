@@ -13,6 +13,7 @@ import com.example.rober.flashbox.activity.SerialAdapter;
 import com.example.rober.flashbox.date.Comanda;
 import com.example.rober.flashbox.date.DataBase;
 import com.example.rober.flashbox.date.DateUtilizator;
+import com.example.rober.flashbox.date.EpisodFavorit;
 
 import java.io.IOException;
 import java.util.ArrayList;
