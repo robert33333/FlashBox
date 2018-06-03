@@ -1,6 +1,7 @@
 package com.example.rober.flashbox;
 
 import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.provider.ContactsContract;
 import android.support.annotation.RequiresApi;
@@ -76,11 +77,20 @@ public class SerialActivity extends AppCompatActivity {
 
         ImageView poza = (ImageView) findViewById(R.id.poza_serial);
         Glide.with(this).load(serialCurent.getLink_poza()).into(poza);
-
         TextView titlu = (TextView) findViewById(R.id.title);
         titlu.setText(serialCurent.getNume());
+        titlu.setTextAppearance(this, R.style.BoldMov);
         TextView descriere = (TextView) findViewById(R.id.description);
         descriere.setText(serialCurent.getDescriere());
+        descriere.setTextAppearance(this, R.style.DefaultMov);
+        descriere.setTextSize(15);
+
+        TextView season = (TextView) findViewById(R.id.season);
+        season.setTextAppearance(this, R.style.BoldMov);
+        season.setTextSize(25);
+        TextView episode = (TextView) findViewById(R.id.episode);
+        episode.setTextAppearance(this, R.style.BoldMov);
+        episode.setTextSize(25);
 
         final LinearLayout listaSezoane = (LinearLayout) findViewById(R.id.lista_sezoane);
         if(serialCurent.getListaSezoane() != null) {
@@ -88,7 +98,7 @@ public class SerialActivity extends AppCompatActivity {
             for (Sezon sezon : serialCurent.getListaSezoane()) {
                 final TextView tv = new TextView(this);
                 tv.setText(sezon.getNumar()+" ");
-                tv.setTextSize(30);
+                tv.setTextAppearance(getApplicationContext(), R.style.DefaultMov);
                 listaSezoane.addView(tv);
                 viewSezoane.add(tv);
                 tv.setOnClickListener(new View.OnClickListener() {
@@ -98,9 +108,11 @@ public class SerialActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         viewEpisoade.clear();
                         for(View v: viewSezoane) {
+                            TextView vv = (TextView)v;
+                            vv.setTextAppearance(getApplicationContext(), R.style.DefaultMov);
                             v.setBackground(null);
                         }
-                        tv.setBackgroundColor(R.drawable.profile);
+                        tv.setTextAppearance(getApplicationContext(), R.style.DefaultRoz);
                         LinearLayout listaEpisoade = (LinearLayout) findViewById(R.id.lista_episoade);
                         if(((LinearLayout) listaEpisoade).getChildCount() > 0)
                             ((LinearLayout) listaEpisoade).removeAllViews();
@@ -108,6 +120,7 @@ public class SerialActivity extends AppCompatActivity {
                         for(final Episod episod: sezonCurent.getListaEpisoade()) {
                             final TextView tv2 = new TextView(getApplicationContext());
                             tv2.setText(episod.getNumar()+" ");
+                            tv2.setTextAppearance(getApplicationContext(), R.style.DefaultMov);
                             tv2.setTextSize(30);
                             listaEpisoade.addView(tv2);
                             viewEpisoade.add(tv2);
@@ -117,9 +130,11 @@ public class SerialActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(View view) {
                                     for(View v: viewEpisoade) {
+                                        TextView vv = (TextView)v;
+                                        vv.setTextAppearance(getApplicationContext(), R.style.DefaultMov);
                                         v.setBackground(null);
                                     }
-                                    tv2.setBackgroundColor(R.drawable.profile);
+                                    tv2.setTextAppearance(getApplicationContext(), R.style.DefaultRoz);
                                     LinearLayout detaliiEpisodNume = (LinearLayout) findViewById(R.id.layout_episoade_nume);
                                     if(((LinearLayout) detaliiEpisodNume).getChildCount() > 0)
                                         ((LinearLayout) detaliiEpisodNume).removeAllViews();
@@ -129,17 +144,17 @@ public class SerialActivity extends AppCompatActivity {
                                     final Episod episodCurent = sezonCurent.getListaEpisoade().get(Integer.parseInt(tv2.getText().toString().trim())-1);
 
                                     TextView titluTitlu = new TextView(getApplicationContext());
-                                    titluTitlu.setText("Titlu: ");
-                                    titluTitlu.setTextSize(30);
-                                    titluTitlu.setTextColor(R.color.colorPrimaryDark);
+                                    titluTitlu.setText("Titlu episod: ");
+                                    titluTitlu.setTextAppearance(getApplicationContext(), R.style.DefaultMov);
+                                    titluTitlu.setTextSize(25);
                                     TextView titlu = new TextView(getApplicationContext());
                                     titlu.setText(episodCurent.getNume());
                                     titlu.setTextSize(30);
 
                                     TextView titluDescriere = new TextView(getApplicationContext());
                                     titluDescriere.setText("Descriere: ");
-                                    titluDescriere.setTextSize(30);
-                                    titluDescriere.setTextColor(R.color.colorPrimaryDark);
+                                    titluDescriere.setTextAppearance(getApplicationContext(), R.style.DefaultMov);
+                                    titluDescriere.setTextSize(25);
                                     TextView descriere = new TextView(getApplicationContext());
                                     descriere.setText(episodCurent.getDescriere());
                                     descriere.setTextSize(30);

@@ -59,13 +59,11 @@ public class LoginActivity extends AppCompatActivity {
                             if (DataBase.socket == null) {
                                 DataBase.initialize();
                             }
-                         //   oos.writeObject(new Comanda("login",new DateUtilizator(editTextUsername.getText().toString(),editTextPassword.getText().toString())));
                             Comanda cmd =
                                     new Comanda("login",
                                             new DateUtilizator(editTextUsername.getText().toString(),
                                                     editTextPassword.getText().toString()));
                             oos.writeObject(cmd);
-                            //oos.writeObject("Salut");
                             dateUtilizatorReceived = (DateUtilizator) ois.readObject();
                         } catch (IOException e) {
                             e.printStackTrace();
