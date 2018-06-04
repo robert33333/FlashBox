@@ -1,6 +1,7 @@
 package com.example.rober.flashbox.activity;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 
 import static android.support.constraint.Constraints.TAG;
 import static com.example.rober.flashbox.date.DataBase.episoadeFavorite;
+import static com.example.rober.flashbox.date.DataBase.inMain;
 
 
 public class FragmentHome extends Fragment {
@@ -29,8 +31,7 @@ public class FragmentHome extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        DataBase.inMain = true;
-
+        DataBase.inMain=true;
         Runnable myRunnable = new Runnable() {
             @Override
             public void run() {
@@ -61,7 +62,6 @@ public class FragmentHome extends Fragment {
     }
 
     public void onDestroyView() {
-        DataBase.inMain = false;
         super.onDestroyView();
     }
 

@@ -36,12 +36,12 @@ public class LoginActivity extends AppCompatActivity {
 
         if (myPrefs.getString("nume", null)!= null) {
             DataBase.utilizatorCurent = new DateUtilizator(
-            //myPrefs.getInt("idUtilizator",0),
             myPrefs.getString("nume", null),
             myPrefs.getString("parola", null),
-            myPrefs.getString("email", null));
+            myPrefs.getString("email", null),
+            myPrefs.getString("poza",null));
             DataBase.utilizatorCurent.setIdUtilizator(myPrefs.getInt("idUtilizator",0));
-            //myPrefs.getString("date", null
+            myPrefs.getString("date", null);
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
         }
@@ -94,8 +94,8 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString("nume", DataBase.utilizatorCurent.getNume());
                 editor.putString("parola", DataBase.utilizatorCurent.getParola());
                 editor.putString("email", DataBase.utilizatorCurent.getEmail());
-                //editor.putString("date", DataBase.utilizatorCurent.getDate());
-
+                editor.putString("date", DataBase.utilizatorCurent.getDate());
+                editor.putString("poza",DataBase.utilizatorCurent.getPoza());
                 editor.apply();
 
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));

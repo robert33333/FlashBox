@@ -8,7 +8,16 @@ public class DateUtilizator implements Serializable {
     private String nume;
     private String parola;
     private String email;
-    private Date date;
+    private String date;
+    private String poza;
+
+    public String getPoza() {
+        return poza;
+    }
+
+    public void setPoza(String poza) {
+        this.poza = poza;
+    }
 
     public DateUtilizator(String s, String s1) {
         nume = s;
@@ -47,17 +56,18 @@ public class DateUtilizator implements Serializable {
         this.email = email;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public DateUtilizator(String nume, String parola, String email) {
+    public DateUtilizator(String nume, String parola, String email, String poza) {
         this.nume = nume;
         this.parola = parola;
         this.email = email;
+        this.poza = poza;
     }
 }

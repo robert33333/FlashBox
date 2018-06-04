@@ -32,6 +32,7 @@ import com.example.rober.flashbox.date.EpisodFavorit;
 
 import java.io.IOException;
 
+import static com.example.rober.flashbox.date.DataBase.inMain;
 import static com.example.rober.flashbox.date.DataBase.oos;
 
 public class MainActivity extends AppCompatActivity
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DataBase.inMain=true;
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity
                 fragmentManager.beginTransaction()
                         .replace(R.id.content_frame,new FragmentHome())
                         .commit();
+                NavigationView navigationView = findViewById(R.id.nav_view);
+                navigationView.setCheckedItem(R.id.nav_home);
             }
         }
     }
@@ -160,7 +162,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onStart() {
-        DataBase.inMain = true;
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame,new FragmentHome())

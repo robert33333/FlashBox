@@ -21,6 +21,8 @@ public class DataBase {
     public static boolean isChecked = false;
     public static ArrayList<EpisodFavorit> episoadeFavorite;
     public static boolean inMain = false;
+    public static ArrayList<Prieten> listaPrieteni;
+    public static boolean addfriend_succes = false;
 
     public static void initialize() {
         try {
@@ -42,6 +44,33 @@ public class DataBase {
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
+    }
+
+    public static void getPrieteni() {
+        listaPrieteni = null;
+        Runnable myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (DataBase.socket == null) {
+                        DataBase.initialize();
+                    }
+                    oos.writeObject(new Comanda("get prieteni", utilizatorCurent.getIdUtilizator()));
+                    DataBase.listaPrieteni = (ArrayList<Prieten>) DataBase.ois.readObject();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Thread myThread = new Thread(myRunnable);
+        myThread.start();
+        try {
+            myThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 //   oos.writeObject(new Comanda("login",new DateUtilizator(editTextUsername.getText().toString(),editTextPassword.getText().toString())));
                                 Comanda cmd =
                                         new Comanda("register",
-                                                new DateUtilizator(userName.getText().toString(), userPassword.getText().toString(), userEmail.getText().toString()));
+                                                new DateUtilizator(userName.getText().toString(), userPassword.getText().toString(), userEmail.getText().toString(),""));
                                 oos.writeObject(cmd);
                                 //oos.writeObject("Salut");
                                 dateUtilizatorReceived = (DateUtilizator) ois.readObject();

@@ -18,7 +18,7 @@
     <string name="profile_email">Email</string>
     <string name="profile_joined_on">Joined on</string>
 
-    <string name="friends_add_friend_button">+ ADD FRIEND</string>
+    <string name="friends_add_friend_button">ADD</string>
     <string name="friends_my_friends">My friends</string>
 
     <string name="user">User</string>
