@@ -1,0 +1,30 @@
+//This file contains user stories for our app
+
+User Stories:
+
+Ca utilizator, doresc:
+1) Sa am o evidenta a episoadelor vazute, din serialele pe care le urmaresc.
+    DETALII: 
+    a) a se marca ultimul episod vizinot.
+    b) a se marca timestamp-ul la care am ramas in episod.
+2) Sa primesc o notificare atunci cand apare un episod nou.
+3) Sa primesc recomandari de noi seriale, bazate pe preferintele mele *
+4) Sa mi se sugereze modalitati de a procura seriale / episoade.
+    DETALII:
+    a) torrent search. (ilegal)
+    b) link-uri catre magazine online.
+5) Sa gasesc subtitrari pentru anumite episoade.
+6) Sa am un meniu de setari UI:
+    a) o tema inchisa a aplicatiei.
+    b) ..
+7) Sa gasesc informatii despre serial:
+    a) actori
+    b) soundrack
+    C) trivia (?)
+8) Sa pot adauga prieteni si sa urmaresc activitatea lor
+
+// tot ce tine de user stories ideal ar fi sa adaugam la pagina de wiki din repo (si descrierea)
+// uml interaction background (schema)
+// database: sa facem niste tabele mari (ex: User (si ce capmuri folosim), etc.)
+// history - ce am vazut
+// wishlist - ce as vrea sa vad
