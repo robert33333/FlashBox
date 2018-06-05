@@ -107,7 +107,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/poza_serial"
         app:layout_constraintRight_toRightOf="@+id/poza_serial"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
