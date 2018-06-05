@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Username"
         style="@style/BoldMov"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/ViewPassword"
@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Password"
         style="@style/BoldMov"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/ViewEmail"
@@ -60,9 +60,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Email"
         style="@style/BoldMov"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <EditText
+        android:hint="ceva"
         android:id="@+id/Username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,6 +77,7 @@
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <EditText
+        android:hint="ceva"
         android:id="@+id/Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,6 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Password" />
 
     <EditText
+        android:hint="ceva"
         android:id="@+id/Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,7 +136,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/BoldMov"
-        android:textSize="30dp"/>
+        android:textSize="30sp"/>
 
     <View
         android:id="@+id/divider"

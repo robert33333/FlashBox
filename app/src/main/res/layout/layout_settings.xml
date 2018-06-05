@@ -18,7 +18,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:text="LOG OUT"
-            android:textSize="25dp"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logoutbutton"
             style="@style/DefaultMov"
-            android:textSize="20dp"/>
+            android:textSize="20sp"/>
 
         <LinearLayout
             android:id="@+id/layoutpoze"
@@ -64,7 +64,8 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3">
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:id="@+id/layoutpoza1"
@@ -78,11 +79,12 @@
 
                 <ImageView
                     android:id="@+id/poza1"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/car" />
+                    app:srcCompat="@drawable/car"
+                    android:contentDescription="DescriptionSmartWoW" />
             </LinearLayout>
 
             <LinearLayout
@@ -96,11 +98,12 @@
 
                 <ImageView
                     android:id="@+id/poza2"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/guitar" />
+                    app:srcCompat="@drawable/guitar"
+                    android:contentDescription="DescriptionSmartWoW2" />
             </LinearLayout>
 
             <LinearLayout
@@ -115,11 +118,12 @@
 
                 <ImageView
                     android:id="@+id/poz3"
-                    android:layout_width="100dp"
+                    android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/ball" />
+                    app:srcCompat="@drawable/ball"
+                    android:contentDescription="DescriptionSmartWoW3" />
             </LinearLayout>
         </LinearLayout>
 
