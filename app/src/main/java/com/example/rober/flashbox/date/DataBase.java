@@ -21,7 +21,7 @@ public class DataBase {
 
     public static void initialize() {
         try {
-            socket = new Socket("82.77.168.248", 9090);
+            socket = new Socket("188.25.132.27", 9090);
             ois = new ObjectInputStream(socket.getInputStream());
             oos = new ObjectOutputStream(socket.getOutputStream());
         } catch (IOException e) {
