@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (dateUtilizatorReceived != null) {
                     //verificari
                     DataBase.utilizatorCurent = dateUtilizatorReceived;
-                    LoginActivity.super.onBackPressed();
+                    //LoginActivity.super.onBackPressed();
                 }
 
                 SharedPreferences sharedPref = LoginActivity.context.getSharedPreferences("myPrefs",0);
@@ -116,9 +116,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    @Override
-    public void onBackPressed() {
     }
 }

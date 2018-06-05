@@ -82,7 +82,8 @@
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/car" />
+                    app:srcCompat="@drawable/car"
+                    android:contentDescription="TODO" />
             </LinearLayout>
 
             <LinearLayout
@@ -100,7 +101,8 @@
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/guitar" />
+                    app:srcCompat="@drawable/guitar"
+                    android:contentDescription="TODO" />
             </LinearLayout>
 
             <LinearLayout
@@ -119,7 +121,8 @@
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/ball" />
+                    app:srcCompat="@drawable/ball"
+                    android:contentDescription="TODO" />
             </LinearLayout>
         </LinearLayout>
 
