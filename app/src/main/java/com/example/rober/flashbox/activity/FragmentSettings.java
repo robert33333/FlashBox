@@ -39,11 +39,10 @@ public class FragmentSettings extends Fragment {
             public void onClick(View view) {
                 SharedPreferences sharedPref = getContext().getSharedPreferences("myPrefs",0);
                 SharedPreferences.Editor editor = sharedPref.edit();
-
                 editor.putString("nume", null);
+                editor.apply();
                 MainActivity ma = (MainActivity)getActivity();
                 ma.back();
-                editor.apply();
             }
         });
 
@@ -54,18 +53,19 @@ public class FragmentSettings extends Fragment {
         ll2.setBackground(null);
         ll3.setBackground(null);
 
-        switch(DataBase.utilizatorCurent.getPoza()) {
-            case "car":
-                ll1.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                break;
-            case "guitar":
-                ll2.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                break;
-            case "ball":
-                ll3.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                break;
+        if(DataBase.utilizatorCurent.getPoza()!=null){
+            switch(DataBase.utilizatorCurent.getPoza()) {
+                case "car":
+                    ll1.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    break;
+                case "guitar":
+                    ll2.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    break;
+                case "ball":
+                    ll3.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    break;
+            }
         }
-
         ll1.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override

@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
         SharedPreferences myPrefs = this.getSharedPreferences("myPrefs", 0);
 
-        if (myPrefs.getString("nume", null)!= null) {
+        if (myPrefs.getString("nume", null)!= null ) {
             DataBase.utilizatorCurent = new DateUtilizator(
             myPrefs.getString("nume", null),
             myPrefs.getString("parola", null),
@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
         }
+
 
         Button buttonLogin = findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -118,9 +119,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed()
-    {
-        // code here to show dialog
-        //super.onBackPressed();  // optional depending on your needs
+    public void onBackPressed() {
     }
 }

@@ -50,12 +50,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (DataBase.socket == null) {
                                     DataBase.initialize();
                                 }
-                                //   oos.writeObject(new Comanda("login",new DateUtilizator(editTextUsername.getText().toString(),editTextPassword.getText().toString())));
-                                Comanda cmd =
-                                        new Comanda("register",
-                                                new DateUtilizator(userName.getText().toString(), userPassword.getText().toString(), userEmail.getText().toString(),""));
+                                Comanda cmd = new Comanda("register",
+                                        new DateUtilizator(userName.getText().toString(), userPassword.getText().toString(), userEmail.getText().toString(),"profile"));
                                 oos.writeObject(cmd);
-                                //oos.writeObject("Salut");
                                 dateUtilizatorReceived = (DateUtilizator) ois.readObject();
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -79,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                         RegisterActivity.super.onBackPressed();
                     } else {
-                        //mesaj ceva e gresit
+                        Toast.makeText(getApplicationContext(), "User deja existent!", Toast.LENGTH_LONG).show();
                     }
 
                 }

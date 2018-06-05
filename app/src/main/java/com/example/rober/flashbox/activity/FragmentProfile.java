@@ -29,18 +29,23 @@ public class FragmentProfile extends Fragment {
         TextView tv2 = (TextView) view.findViewById(R.id.user_email);
         TextView tv3 = (TextView) view.findViewById(R.id.user_joindate);
 
-        switch (DataBase.utilizatorCurent.getPoza()){
-            case "ball":
-                img.setImageResource(R.drawable.ball);
-                break;
-            case "guitar":
-                img.setImageResource(R.drawable.guitar);
-                break;
-            case "car":
-                img.setImageResource(R.drawable.car);
-                break;
-            default:
-                img.setImageResource(R.drawable.profile);
+        if(DataBase.utilizatorCurent.getPoza()!=null){
+            switch (DataBase.utilizatorCurent.getPoza()){
+                case "ball":
+                    img.setImageResource(R.drawable.ball);
+                    break;
+                case "guitar":
+                    img.setImageResource(R.drawable.guitar);
+                    break;
+                case "car":
+                    img.setImageResource(R.drawable.car);
+                    break;
+                default:
+                    img.setImageResource(R.drawable.profile);
+            }
+        }
+        else{
+            img.setImageResource(R.drawable.profile);
         }
         tv1.setText(DataBase.utilizatorCurent.getNume());
         tv2.setText(DataBase.utilizatorCurent.getEmail());
