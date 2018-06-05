@@ -2,7 +2,6 @@ package com.example.rober.flashbox.activity;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,10 +23,10 @@ public class FragmentProfile extends Fragment {
         Log.d(TAG, "DATA: "+DataBase.utilizatorCurent.getDate());
         DataBase.inMain=false;
         View view = inflater.inflate(R.layout.layout_profile, container, false);
-        ImageView img = (ImageView) view.findViewById(R.id.imageView2);
-        TextView tv1 = (TextView) view.findViewById(R.id.user_name);
-        TextView tv2 = (TextView) view.findViewById(R.id.user_email);
-        TextView tv3 = (TextView) view.findViewById(R.id.user_joindate);
+        ImageView img = view.findViewById(R.id.imageView2);
+        TextView tv1 = view.findViewById(R.id.user_name);
+        TextView tv2 = view.findViewById(R.id.user_email);
+        TextView tv3 = view.findViewById(R.id.user_joindate);
 
         if(DataBase.utilizatorCurent.getPoza()!=null){
             switch (DataBase.utilizatorCurent.getPoza()){

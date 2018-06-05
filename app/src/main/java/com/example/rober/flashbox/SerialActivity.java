@@ -1,25 +1,18 @@
 package com.example.rober.flashbox;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentManager;
-import android.graphics.Typeface;
 import android.os.Build;
-import android.provider.ContactsContract;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.style.ImageSpan;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
-import com.example.rober.flashbox.activity.FragmentHome;
 import com.example.rober.flashbox.date.Comanda;
 import com.example.rober.flashbox.date.DataBase;
 import com.example.rober.flashbox.date.Episod;
@@ -35,9 +28,9 @@ import static com.example.rober.flashbox.date.DataBase.oos;
 import static com.example.rober.flashbox.date.DataBase.serialCurent;
 
 public class SerialActivity extends AppCompatActivity {
-    static int idEpisod=-1;
-    static ArrayList<TextView> viewSezoane = new ArrayList<>();
-    static ArrayList<TextView> viewEpisoade = new ArrayList<>();
+    private static int idEpisod=-1;
+    private static final ArrayList<TextView> viewSezoane = new ArrayList<>();
+    private static final ArrayList<TextView> viewEpisoade = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,24 +70,24 @@ public class SerialActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ImageView poza = (ImageView) findViewById(R.id.poza_serial);
+        ImageView poza = findViewById(R.id.poza_serial);
         Glide.with(this).load(serialCurent.getLink_poza()).into(poza);
-        TextView titlu = (TextView) findViewById(R.id.title);
+        TextView titlu = findViewById(R.id.title);
         titlu.setText(serialCurent.getNume());
         titlu.setTextAppearance(this, R.style.BoldMov);
-        TextView descriere = (TextView) findViewById(R.id.description);
+        TextView descriere = findViewById(R.id.description);
         descriere.setText(serialCurent.getDescriere());
         descriere.setTextAppearance(this, R.style.DefaultMov);
         descriere.setTextSize(15);
 
-        TextView season = (TextView) findViewById(R.id.season);
+        TextView season = findViewById(R.id.season);
         season.setTextAppearance(this, R.style.BoldMov);
         season.setTextSize(25);
-        TextView episode = (TextView) findViewById(R.id.episode);
+        TextView episode = findViewById(R.id.episode);
         episode.setTextAppearance(this, R.style.BoldMov);
         episode.setTextSize(25);
 
-        final LinearLayout listaSezoane = (LinearLayout) findViewById(R.id.lista_sezoane);
+        final LinearLayout listaSezoane = findViewById(R.id.lista_sezoane);
         if(serialCurent.getListaSezoane() != null) {
             viewSezoane.clear();
             for (Sezon sezon : serialCurent.getListaSezoane()) {
@@ -115,9 +108,9 @@ public class SerialActivity extends AppCompatActivity {
                             v.setBackground(null);
                         }
                         tv.setTextAppearance(getApplicationContext(), R.style.DefaultRoz);
-                        LinearLayout listaEpisoade = (LinearLayout) findViewById(R.id.lista_episoade);
-                        if(((LinearLayout) listaEpisoade).getChildCount() > 0)
-                            ((LinearLayout) listaEpisoade).removeAllViews();
+                        LinearLayout listaEpisoade = findViewById(R.id.lista_episoade);
+                        if(listaEpisoade.getChildCount() > 0)
+                            listaEpisoade.removeAllViews();
                             final Sezon sezonCurent = DataBase.serialCurent.getListaSezoane().get(Integer.parseInt(tv.getText().toString().trim())-1);
                         for(final Episod episod: sezonCurent.getListaEpisoade()) {
                             final TextView tv2 = new TextView(getApplicationContext());
@@ -137,12 +130,12 @@ public class SerialActivity extends AppCompatActivity {
                                         v.setBackground(null);
                                     }
                                     tv2.setTextAppearance(getApplicationContext(), R.style.DefaultRoz);
-                                    LinearLayout detaliiEpisodNume = (LinearLayout) findViewById(R.id.layout_episoade_nume);
-                                    if(((LinearLayout) detaliiEpisodNume).getChildCount() > 0)
-                                        ((LinearLayout) detaliiEpisodNume).removeAllViews();
-                                    LinearLayout detaliiEpisodDescriere = (LinearLayout) findViewById(R.id.layout_episoade_descriere);
-                                    if(((LinearLayout) detaliiEpisodDescriere).getChildCount() > 0)
-                                        ((LinearLayout) detaliiEpisodDescriere).removeAllViews();
+                                    LinearLayout detaliiEpisodNume = findViewById(R.id.layout_episoade_nume);
+                                    if(detaliiEpisodNume.getChildCount() > 0)
+                                        detaliiEpisodNume.removeAllViews();
+                                    LinearLayout detaliiEpisodDescriere = findViewById(R.id.layout_episoade_descriere);
+                                    if(detaliiEpisodDescriere.getChildCount() > 0)
+                                        detaliiEpisodDescriere.removeAllViews();
                                     final Episod episodCurent = sezonCurent.getListaEpisoade().get(Integer.parseInt(tv2.getText().toString().trim())-1);
 
                                     TextView titluTitlu = new TextView(getApplicationContext());
@@ -178,9 +171,9 @@ public class SerialActivity extends AppCompatActivity {
                                         DataBase.isChecked = false;
                                         imageButton.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),android.R.drawable.btn_star_big_off));
                                     }
-                                    LinearLayout layoutsteluta = (LinearLayout) findViewById(R.id.layout_episoade_steluta);
-                                    if(((LinearLayout) layoutsteluta).getChildCount() > 0)
-                                        ((LinearLayout) layoutsteluta).removeAllViews();
+                                    LinearLayout layoutsteluta = findViewById(R.id.layout_episoade_steluta);
+                                    if(layoutsteluta.getChildCount() > 0)
+                                        layoutsteluta.removeAllViews();
                                     layoutsteluta.addView(imageButton);
                                     imageButton.setOnClickListener(new View.OnClickListener() {
                                         @Override

@@ -5,7 +5,6 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
@@ -16,23 +15,18 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rober.flashbox.R;
 import com.example.rober.flashbox.date.Comanda;
 import com.example.rober.flashbox.date.DataBase;
-import com.example.rober.flashbox.date.EpisodFavorit;
-import com.example.rober.flashbox.date.Serial;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static android.support.constraint.Constraints.TAG;
 import static com.example.rober.flashbox.date.DataBase.addfriend_succes;
 import static com.example.rober.flashbox.date.DataBase.ois;
 import static com.example.rober.flashbox.date.DataBase.oos;
-import static com.example.rober.flashbox.date.DataBase.serialCurent;
 import static com.example.rober.flashbox.date.DataBase.utilizatorCurent;
 
 public class FragmentFriends extends Fragment {
@@ -53,7 +47,7 @@ public class FragmentFriends extends Fragment {
         listView.setAdapter(friendAdapter);
 
         final Button addfriend = view.findViewById(R.id.friends_add_friend_button);
-        final EditText et = (EditText) view.findViewById(R.id.addfriendinput);
+        final EditText et = view.findViewById(R.id.addfriendinput);
         addfriend.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override

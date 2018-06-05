@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.rober.flashbox.MainActivity;
 import com.example.rober.flashbox.R;
-import com.example.rober.flashbox.date.DataBase;
 import com.example.rober.flashbox.date.EpisodFavorit;
 import com.example.rober.flashbox.date.Prieten;
 
@@ -36,7 +34,7 @@ class FriendAdapter extends ArrayAdapter<Prieten> {
         }
 
         assert p != null;
-        ImageView img = (ImageView) convertView.findViewById(R.id.imageViewFriendRow);
+        ImageView img = convertView.findViewById(R.id.imageViewFriendRow);
         if(p.getPoza() != null)
         {
             switch (p.getPoza()){

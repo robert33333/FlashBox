@@ -1,7 +1,6 @@
 package com.example.rober.flashbox.date;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 public class DateUtilizator implements Serializable {
     private int idUtilizator;

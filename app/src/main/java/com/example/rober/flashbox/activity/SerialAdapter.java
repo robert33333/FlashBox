@@ -7,21 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.rober.flashbox.LoginActivity;
 import com.example.rober.flashbox.MainActivity;
 import com.example.rober.flashbox.R;
-import com.example.rober.flashbox.RegisterActivity;
-import com.example.rober.flashbox.SearchSerialActivity;
 import com.example.rober.flashbox.SerialActivity;
 import com.example.rober.flashbox.date.DataBase;
 import com.example.rober.flashbox.date.Serial;
 
 import java.util.ArrayList;
-
-import static android.support.v4.content.ContextCompat.startActivity;
 
 public class SerialAdapter extends ArrayAdapter<String> {
 

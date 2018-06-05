@@ -21,7 +21,6 @@ import static com.example.rober.flashbox.date.DataBase.oos;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText userName, userPassword, userEmail;
-    private Button regButton;
     private TextView userLogin;
     private static DateUtilizator dateUtilizatorReceived;
 
@@ -31,10 +30,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        userName = (EditText) findViewById(R.id.Username);
-        userPassword = (EditText) findViewById(R.id.Password);
-        userEmail = (EditText) findViewById(R.id.Email);
-        regButton = (Button) findViewById(R.id.Confirm);
+        userName = findViewById(R.id.Username);
+        userPassword = findViewById(R.id.Password);
+        userEmail = findViewById(R.id.Email);
+        Button regButton = findViewById(R.id.Confirm);
 
 
         regButton.setOnClickListener(new View.OnClickListener() {

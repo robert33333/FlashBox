@@ -1,19 +1,15 @@
 package com.example.rober.flashbox;
 
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.rober.flashbox.activity.SerialAdapter;
 import com.example.rober.flashbox.date.Comanda;
 import com.example.rober.flashbox.date.DataBase;
-import com.example.rober.flashbox.date.DateUtilizator;
-import com.example.rober.flashbox.date.EpisodFavorit;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +24,7 @@ public class SearchSerialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_serial);
 
-        Button button = (Button)findViewById(R.id.button_cauta);
+        Button button = findViewById(R.id.button_cauta);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +33,7 @@ public class SearchSerialActivity extends AppCompatActivity {
                 Runnable myRunnable = new Runnable() {
                     @Override
                     public void run() {
-                        EditText editTextCautare = (EditText) findViewById(R.id.editTextCautare);
+                        EditText editTextCautare = findViewById(R.id.editTextCautare);
                         try {
                             if (DataBase.socket == null) {
                                 DataBase.initialize();

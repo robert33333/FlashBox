@@ -10,16 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.example.rober.flashbox.LoginActivity;
 import com.example.rober.flashbox.MainActivity;
 import com.example.rober.flashbox.R;
 import com.example.rober.flashbox.date.DataBase;
-
-import static com.example.rober.flashbox.R.color.colorPrimaryDark;
 
 public class FragmentSettings extends Fragment {
     private static String poza = DataBase.utilizatorCurent.getPoza();

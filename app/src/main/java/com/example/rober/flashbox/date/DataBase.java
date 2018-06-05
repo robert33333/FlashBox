@@ -1,23 +1,10 @@
 package com.example.rober.flashbox.date;
 
-import android.app.FragmentManager;
-import android.content.Context;
-import android.provider.ContactsContract;
-import android.util.Log;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
-
-import com.example.rober.flashbox.R;
-import com.example.rober.flashbox.activity.FragmentFriends;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
-
-import static android.support.constraint.Constraints.TAG;
 
 public class DataBase {
     public static ObjectOutputStream oos;

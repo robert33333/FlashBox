@@ -1,29 +1,15 @@
 package com.example.rober.flashbox.activity;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.rober.flashbox.MainActivity;
 import com.example.rober.flashbox.R;
-import com.example.rober.flashbox.date.Comanda;
 import com.example.rober.flashbox.date.DataBase;
-import com.example.rober.flashbox.date.EpisodFavorit;
-
-import java.io.IOException;
-import java.util.ArrayList;
-
-import static android.support.constraint.Constraints.TAG;
-import static com.example.rober.flashbox.date.DataBase.episoadeFavorite;
-import static com.example.rober.flashbox.date.DataBase.inMain;
 
 
 public class FragmentHome extends Fragment {
@@ -59,10 +45,6 @@ public class FragmentHome extends Fragment {
     }
     public void onViewCreated(View view, @Nullable Bundle savedInstance) {
 
-    }
-
-    public void onDestroyView() {
-        super.onDestroyView();
     }
 
 }
