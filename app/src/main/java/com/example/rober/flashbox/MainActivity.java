@@ -169,4 +169,8 @@ public class MainActivity extends AppCompatActivity
         super.onStart();
     }
 
+
+    public void back() {
+        super.onBackPressed();
+    }
 }

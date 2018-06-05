@@ -1,7 +1,15 @@
 package com.example.rober.flashbox.date;
 
+import android.app.FragmentManager;
+import android.content.Context;
 import android.provider.ContactsContract;
 import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
+
+import com.example.rober.flashbox.R;
+import com.example.rober.flashbox.activity.FragmentFriends;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -73,4 +81,29 @@ public class DataBase {
         }
     }
 
+    public static void updatePoza(final String poza) {
+        final Runnable myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (DataBase.socket == null) {
+                        DataBase.initialize();
+                    }
+                    Comanda cmd = new Comanda("update poza", poza);
+                    oos.writeObject(cmd);
+                    oos.writeObject((new Comanda("", utilizatorCurent.getIdUtilizator())));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        Thread myThread = new Thread(myRunnable);
+        myThread.start();
+        try {
+            myThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

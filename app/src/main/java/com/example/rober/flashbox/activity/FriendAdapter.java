@@ -37,18 +37,24 @@ class FriendAdapter extends ArrayAdapter<Prieten> {
 
         assert p != null;
         ImageView img = (ImageView) convertView.findViewById(R.id.imageViewFriendRow);
-        switch (p.getPoza()){
-            case "ball":
-                img.setImageResource(R.drawable.ball);
-                break;
-            case "guitar":
-                img.setImageResource(R.drawable.guitar);
-                break;
-            case "car":
-                img.setImageResource(R.drawable.car);
-                break;
-            default:
-                img.setImageResource(R.drawable.profile);
+        if(p.getPoza() != null)
+        {
+            switch (p.getPoza()){
+                case "ball":
+                    img.setImageResource(R.drawable.ball);
+                    break;
+                case "guitar":
+                    img.setImageResource(R.drawable.guitar);
+                    break;
+                case "car":
+                    img.setImageResource(R.drawable.car);
+                    break;
+                default:
+                    img.setImageResource(R.drawable.profile);
+            }
+        }
+        else {
+            img.setImageResource(R.drawable.profile);
         }
         TextView username = convertView.findViewById(R.id.textViewFriendRow);
         username.setText(p.getUsername());
