@@ -34,7 +34,7 @@
         android:src="@mipmap/ic_launcher"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="TODO" />
+        android:contentDescription="DescriptionSmartWoW4" />
 
     <View
         android:id="@+id/divider1"

@@ -17,7 +17,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:text="LOG OUT AND EXIT"
+            android:text="LOG OUT"
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +83,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/car"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="DescriptionSmartWoW" />
             </LinearLayout>
 
             <LinearLayout
@@ -102,7 +102,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/guitar"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="DescriptionSmartWoW2" />
             </LinearLayout>
 
             <LinearLayout
@@ -122,7 +122,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ball"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="DescriptionSmartWoW3" />
             </LinearLayout>
         </LinearLayout>
 

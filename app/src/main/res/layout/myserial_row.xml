@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile"
         tools:ignore="VectorDrawableCompat"
-        android:contentDescription="TODO" />
+        android:contentDescription="DescriptionSmartWoW5" />
 
     <TextView
         android:id="@+id/tvMySerialRow"
